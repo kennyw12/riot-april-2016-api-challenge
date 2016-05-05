@@ -1,0 +1,55 @@
+{
+  "name": "Masterly",
+  "version": "1.0.0",
+  "description": "Improve your play through youtube videos.",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kennyw12/master-your-champions.github.io.git"
+  },
+  "author": "Kenny Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennyw12/master-your-champions.github.io/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^6.0.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-react-jsx": "^6.5.2",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint-plugin-react": "^4.3.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-jasmine-browser": "^1.2.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-plumber": "^1.1.0",
+    "jquery": "^2.2.3",
+    "json-loader": "^0.5.4",
+    "net": "^1.0.2",
+    "node-sass": "^3.4.2",
+    "phantomjs": "^2.1.7",
+    "phantomjs-polyfill": "0.0.2",
+    "react": "^15.0.2",
+    "react-addons-test-utils": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.2",
+    "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "csurf": "^1.8.3",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}

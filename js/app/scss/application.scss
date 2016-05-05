@@ -1,0 +1,19 @@
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-top: 15%;
+  .search {
+    width: 75%;
+    text-align: center;
+    @media (max-width:480px) {
+      width: 100%;
+    }
+    input {
+      margin-top: 20px;
+      width: 50%;
+    }
+  }
+}
