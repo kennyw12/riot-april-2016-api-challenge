@@ -7,7 +7,7 @@ Displays your top champion masteries with YouTube videos of a given champion.
 
 - Info Page:
 
-Displays the roles you play with the amount of champion mastery points per roles
+Displays the roles you play, with the number of champion mastery points per role
 by champion.
 
 
