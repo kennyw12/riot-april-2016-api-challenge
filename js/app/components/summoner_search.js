@@ -22,13 +22,16 @@ const SummonerSearch = React.createClass({
     }
   },
 
+  otherPage(page) {
+    if (page === 'info') {
+      return 'masteries';
+    }
+    return 'info';
+  },
+
   page() {
     const {page, switchPage} = this.props;
-    if (page === 'info') {
-      switchPage('masteries')
-    } else {
-      switchPage('info')
-    }
+    switchPage(this.otherPage(page))
   },
 
   render() {
@@ -39,12 +42,12 @@ const SummonerSearch = React.createClass({
           <div className="title">
             <h3>Master Your Champions</h3>
           </div>
-          {searchResults && <span style={{color: 'white', paddingRight: '10px'}} >Master Your Champion </span>}
+          {searchResults && <span style={{color: 'white', paddingRight: '10px', fontSize: '18px'}} >Master Your Champion </span>}
           <input type="text" placeholder="Summoner Name" value={summonerName} onKeyUp={this.change} />
           <button onClick={this.searchSummoner}>
             <i className="glyphicon glyphicon-search" />
           </button>
-          {searchResults && <span className="nav" onClick={this.page}>{page}</span>}
+          {searchResults && <span className="nav" onClick={this.page}>{this.otherPage(page)}</span>}
         </div>
       </div>
     )

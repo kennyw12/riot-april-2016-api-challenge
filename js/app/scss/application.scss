@@ -4,21 +4,15 @@
 
 body {
   color: $indigo;
+  overflow-x: hidden;
 }
 
 .video {
   background-color: $indigo;
-  margin: 10px 20px;
+  margin: 10px 15px;
   height: 300px;
   width: 600px;
-}
-
-.videos {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  left: 33%;
+  display: inline-block;
 }
 
 .loading {
@@ -57,6 +51,13 @@ body {
       position: relative;
       left: 40%;
     }
+  }
+}
+
+.table {
+  margin-top: 90px;
+  thead th {
+    white-space: nowrap;
   }
 }
 

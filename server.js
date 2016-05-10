@@ -25,13 +25,6 @@ app.get('/api/lol/search/:name', function(req, res) {
   });
 });
 
-app.get('/api/lol/champion/:id', function(req, res) {
-  var id = req.params.id;
-  lolApi.championImageLookup(id).then((imageData) => {
-    res.send(imageData);
-  });
-});
-
 app.get('/api/lol/champion/:id/data/:type', function(req, res) {
   lolApi.championLookup(req.params.id, req.params.type).then((data) => {
     res.send(data);
@@ -40,7 +33,7 @@ app.get('/api/lol/champion/:id/data/:type', function(req, res) {
 
 app.get('/api/yt/champion_videos/:id', function(req, res) {
   var id = req.params.id;
-  lolApi.championImageLookup(id).then((imageData) => {
+  lolApi.championLookup(id, 'tags').then((imageData) => {
     var query = imageData.name;
     youtubeApi.searchYoutube(query).then((videoResults) => {
       Object.assign(videoResults, {query: query})

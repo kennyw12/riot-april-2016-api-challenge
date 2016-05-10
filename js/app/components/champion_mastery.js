@@ -7,7 +7,8 @@ const ChampionMastery = React.createClass({
   propTypes: {
     championMastery: React.PropTypes.object,
     selected: React.PropTypes.bool,
-    onClick: React.PropTypes.func
+    onClick: React.PropTypes.func,
+    index: React.PropTypes.number
   },
 
   getInitialState() {
@@ -19,7 +20,7 @@ const ChampionMastery = React.createClass({
   componentWillMount() {
     const {championMastery} = this.props;
     championMastery && Object.keys(championMastery).length > 0 &&
-      api.championImage(championMastery.championId).then((imageData) => {
+      api.getData(championMastery.championId, 'image').then((imageData) => {
         Object.assign(imageData, {level: championMastery.championLevel, points: championMastery.championPoints})
         this.setState({championInfo: imageData});
     });
@@ -27,13 +28,13 @@ const ChampionMastery = React.createClass({
 
   render() {
     const {championInfo} = this.state;
-    const {selected, onClick} = this.props;
+    const {selected, onClick, index} = this.props;
     const infoExists = Object.keys(championInfo).length > 0;
     return (
       <div className={`champion-mastery ${selected ? '' : 'side-mastery'}`} onClick={onClick}>
         {
           infoExists && <div>
-            <div className="name">{championInfo.name}</div>
+            <div className="name">{index + 1}. {championInfo.name}</div>
             <div className="champion-title">{championInfo.title}</div>
             <img src={`${championSquareImageUrl + championInfo.image.full}`} crossOrigin="anonymous"/>
             <div>

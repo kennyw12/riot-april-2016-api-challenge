@@ -41,7 +41,7 @@ const Application = React.createClass({
       <div>
         <SummonerSearch name={summonerName} searchResults={searchResults} page={page} switchPage={this.switchPage}
                         setSummonerName={this.setSummonerName} searchSummoner={this.searchSummoner} />
-        {processing && <h3 className="loading">Looking up your champion masteries</h3>}
+        {processing && <p className="loading">Looking up your champion masteries</p>}
         {page === 'masteries' && <ChampionMasteries championMasteries={championMasteries} />}
         {page === 'info' && <Info championMasteries={championMasteries} />}
       </div>

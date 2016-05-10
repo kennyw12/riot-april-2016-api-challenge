@@ -28,9 +28,9 @@ const ChampionMasteries = React.createClass({
   render() {
     const {championMasteries} = this.props;
     const {selected} = this.state;
-    const currentMastery = championMasteries.length > 0 ? <ChampionMastery championMastery={championMasteries[selected]} selected={true} key={selected} /> : <ChampionMastery/>;
-    const prevMastery = selected - 1 >= 0 ? <ChampionMastery championMastery={championMasteries[selected - 1]} selected={false} onClick={this.previousChampion} key={selected - 1} /> : <ChampionMastery />;
-    const nextMastery = selected + 1 < championMasteries.length ? <ChampionMastery championMastery={championMasteries[selected + 1]} selected={false} onClick={this.nextChampion} key={selected + 1} /> : <ChampionMastery />;
+    const currentMastery = championMasteries.length > 0 ? <ChampionMastery championMastery={championMasteries[selected]} selected={true} key={selected} index={selected} /> : <ChampionMastery/>;
+    const prevMastery = selected - 1 >= 0 ? <ChampionMastery championMastery={championMasteries[selected - 1]} selected={false} onClick={this.previousChampion} key={selected - 1} index={selected - 1} /> : <ChampionMastery />;
+    const nextMastery = selected + 1 < championMasteries.length ? <ChampionMastery championMastery={championMasteries[selected + 1]} selected={false} onClick={this.nextChampion} key={selected + 1} index={selected + 1} /> : <ChampionMastery />;
     return (
       <div className="champion-masteries">
         {

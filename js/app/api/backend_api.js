@@ -5,10 +5,6 @@ module.exports = {
     return fetchJson(`/api/lol/search/${name.toLowerCase()}`);
   },
 
-  championImage(championId) {
-    return fetchJson(`/api/lol/champion/${championId}`);
-  },
-
   searchVideos(championId) {
     return fetchJson(`/api/yt/champion_videos/${championId}`);
   },
@@ -18,6 +14,6 @@ module.exports = {
   },
 
   getData(id, type) {
-    return fetchJson(`/api/lol/champion/${type}/data/${type}`)
+    return fetchJson(`/api/lol/champion/${id}/data/${type}`)
   }
 }
