@@ -25,7 +25,7 @@ const Application = React.createClass({
 
   searchSummoner() {
     var {summonerName} = this.state;
-    this.setState({championMasteries: [], processing: true})
+    this.setState({processing: true})
     api.searchName(summonerName).then((response) => {
       this.setState({championMasteries: response, searchResults: true, processing: false});
     })
@@ -37,13 +37,15 @@ const Application = React.createClass({
 
   render() {
     const {summonerName, championMasteries, searchResults, processing, page} = this.state;
+    const champions = <ChampionMasteries championMasteries={championMasteries} key={processing} />;
+    const info = <Info championMasteries={championMasteries} key={processing} />;
     return (
       <div>
         <SummonerSearch name={summonerName} searchResults={searchResults} page={page} switchPage={this.switchPage}
                         setSummonerName={this.setSummonerName} searchSummoner={this.searchSummoner} />
-        {processing && <p className="loading">Looking up your champion masteries</p>}
-        {page === 'masteries' && <ChampionMasteries championMasteries={championMasteries} />}
-        {page === 'info' && <Info championMasteries={championMasteries} />}
+        {processing && !searchResults && <p className="loading">Looking up your champion masteries</p>}
+        {page === 'masteries' && champions}
+        {page === 'info' && info}
       </div>
     )
   }

@@ -81,8 +81,8 @@ const Info = React.createClass({
   render() {
     const {info, sortBy, ascending, loading, tooltip} = this.state;
     var sortedTags = info.sort((tag1, tag2) => {
-      if (sortBy === 'total') { return tag1.points - tag2.points; }
-      if (sortBy === 'average') { return tag1.points/tag1.count - tag2.points/tag2.count; }
+      if (sortBy === 'total') { return tag2.points - tag1.points; }
+      if (sortBy === 'average') { return tag2.points/tag2.count - tag1.points/tag1.count; }
       if (sortBy === 'role') { return tag1.tag.localeCompare(tag2.tag); }
       return 0;
     })
