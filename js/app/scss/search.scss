@@ -1,0 +1,56 @@
+@import './colors.scss';
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-top: 15%;
+  .search {
+    width: 75%;
+    text-align: center;
+    @media (max-width:480px) {
+      width: 100%;
+    }
+    input {
+      margin-top: 20px;
+      width: 50%;
+    }
+  }
+  &.header {
+    margin-top: 0%;
+    padding-left: 20px;
+    justify-content: inherit;
+    position: fixed;
+    z-index: 1;
+    background-color: $indigo;
+    height: 60px;
+    top: 0;
+    animation: toTheTop .5s;
+    .title {
+      opacity: 0;
+      display: none;
+    }
+    .search {
+      text-align: left;
+    }
+    .nav {
+      float: right;
+      color: white;
+      text-transform: capitalize;
+      margin-right: 10px;
+      &:hover, &:focus {
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+}
+
+@keyframes toTheTop {
+    0% {margin-top: 15%}
+    100% {
+      padding-left: 20px;
+      background-color: $indigo;
+    }
+}

@@ -8,9 +8,9 @@ module.exports = {
   },
   module: {
 	  loaders: [
-	    { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-	    { test: /\.json$/, loader: 'json-loader'},
-	  	{ test: /\.(scss|css)$/, exclude: /node_modules/, loader: 'style-loader!css-loader!sass-loader' }
+	    { test: /\.js$/, include: /js/, loader: 'babel-loader'},
+	    { test: /\.json$/, include: /js/, loader: 'json-loader'},
+	  	{ test: /\.(scss|css)$/, include: /js/, loader: 'style-loader!css-loader!sass-loader' }
 	  ]
 	}
 };
